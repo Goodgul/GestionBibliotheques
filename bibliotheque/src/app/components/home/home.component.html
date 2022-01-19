@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <div class="image">
+
+
+        <div class=" top-section container ">
+            <div class="row align-items-center ">
+                <div class="col">
+                    <div class="col-12 text-light ">
+
+                        <h1 class="display-12 "> Les médiathèques et bibliothèques Bouches-du-Rhône (13) </h1>
+                      
+
+                    </div>
+                    <form (ngSubmit)="rechercheBib(motcle)" #motcle="ngForm" class="form-inline my-2 my-lg-0 d-flex">
+
+                        <input name="titre" class="form-control form-control-lg mr-sm-0 col-8" type="text"
+                            placeholder="what do you wante to learn"   [(ngModel)]= "bibliothequeHtlm.mocle">
+
+                        <button class="btn btn-outline-primary  btn1 " type="submit">Rechercher</button>
+                   
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div>
+
+
+        <section *ngIf="listedEtablissement">
+            <p  class="text-center" ngDefaultControl> Le nombre du Resultats de votre Rechercehe est de  {{this.nombreResultat}}  elements avec le Mot clé {{bibliothequeHtlm.mocle}}</p>
+            <div class="container mb-5 mt-5">
+                <div class="row"> 
+                    <!-- card -->
+                    <div class="col-md-4" *ngFor="let t of listedEtablissement._embedded.bibliotheques">
+                       
+                        <div class="card  mt-3">
+                            <div class="bibliotheque align-items-center p-2 text-center  h-25 min-vh-100">
+
+
+                                <img src="{{t.image}}" class="rounded " height="390" width="390">
+
+                                <div class=" titre">
+                                    <h5>{{t.titre}}</h5>
+
+                                </div>
+                                <!-- la discription  -->
+                                <div class="mt-3 info">
+                                    <span class="text1 d-blick">{{t.description}} </span>
+                                </div>
+                                <div class="mt-3  ">
+                                    <span class="text2 d-blick">{{t.adresse}} </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+
+
+        <!-- <article class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="col-6 text-ligth">
+
+                        <h1>MÉDIATHÈQUE</h1> 
+
+    <img src="../../../assets/passrelle interieur2.jpg" class="float-end" width="500px" height="500px">  
+     <p>Le département Bouches-du-Rhône compte 135 autres bibliothèques et médiathèques.
+                            Retrouvez en suivant ce lien la liste de toutes les médiathèques et bibliothèques dans les
+                            Bouches-du-Rhône ou cliquez sur un des liens ci-desssous</p>
+
+                    </div>
+
+                    <div class=" p-5 my-5text-white">
+
+                        <p>Bibliothèque Mejanes à Aix-en-Provence (13)<br>
+                            Mediathèque Municipale à Belcodène (13)<br>
+                            Médiathèque Simone-Veil à La Ciotat (13)<br>
+                            Bibliothèque Municipale à Saint-Chamas (13)<br>
+                            Médiathèque Municipale à Eyguières (13).</p>
+                    </div>
+
+                </div>
+            </div>
+        
+        </article> -->
+        <article class="container-fluid con">
+            <div class="row">
+                <div class="col-md-2 mt-5">
+                    <div class="container mt-3">
+                        <h3>Vous êtes...</h3>
+
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">VISITEURS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ADHERENTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">PROFESSIONNELS</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-5  mb-5"><img class="rounded imge" src="../../../assets/media2.jpg">
+                    <img class="rounded imge" src="../../../assets/bib3.jfif">
+                </div>
+                <div class="col-md-3 mt-5">
+                    <p class="p1">Le département Bouches-du-Rhône compte 135 autres bibliothèques et médiathèques.
+                        Retrouvez en suivant ce lien la liste de toutes les médiathèques et bibliothèques dans les
+                        Bouches-du-Rhône ou cliquez sur un des liens ci-desssous</p>
+                    <p class="p2">
+                        Bibliothèque Mejanes à Aix-en-Provence (13)
+                        Mediathèque Municipale à Belcodène (13)
+                        Médiathèque Simone-Veil à La Ciotat (13)
+                        Bibliothèque Municipale à Saint-Chamas (13)
+                        Médiathèque Municipale à Eyguières (13)
+                    </p>
+
+                    <p class="p1">Découvrez d'autres médiathèques et bibliothèques de la région Provence-Alpes-Côte
+                        d'Azur
+                    </p>
+
+                    <P class="p2"> Bibliothèque Pierre Laffitte à Rigaud (06)<br>
+                        Médiathèque et Espace Jeux à Mougins (06)<br>
+                        Bibliothèque de La Bollène à La Bollène-Vésubie (06)<br>
+                        Bibliothèque Municipale Floret à Murs (84)<br>
+                        Bibliothèque Annexe De Saint Jacques à Grasse (06)</P>
+                </div>
+                <div class="col-md-3 mt-5"><img class="rounded imge" src="../../../assets/passrelle interieur.jfif">
+                    <img class="rounded imge" src="../../../assets/mediatequemejane.jpg">
+
+                </div>
+            </div>
+
+
+        </article>
+     
+
+
+        <!-- /***************************************************/ -->
+
+        <!-- <h1 class="title">carousel custom style</h1>
+
+    <div class="owl-container">
+        <div class="owl-carousel owl-theme">
+            <div class="item"> Your Content bonjou </div>
+            <div class="item">Your Content 1</div>
+            <div class="item"> Your Content bonjou </div>
+            <div class="item">Your Content 1</div>
+            <div class="item"> Your Content bonjou </div>
+            <div class="item">Your Content 1</div>
+
+
+        </div>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

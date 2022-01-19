@@ -1,0 +1,66 @@
+
+
+<router-outlet>
+
+
+
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-sm bg-light  justify-content-center  fixed-top">
+  <div class="container-fluid ">
+  <!-- Links -->
+
+  <a class="navbar-brand" routerLink=''>V<em>i</em>T<em>ROLLES</em>
+    
+    <p class="text-muted">Site officiel de l'office du tourisme</p></a>
+
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <ul class="navbar-nav menu1">
+
+  
+    <li class="nav-item ">
+      <a class="nav-link" routerLink='biblio' >Les Bibliothèques</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Agenda</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='utilisateur'>les livres</a>
+    </li>
+  </ul>
+
+    <div><i class="fab fa-facebook-square "></i><i class="fab fa-twitter"></i><i class="fab fa-instagram"></i></div>
+
+</div>
+</nav>
+
+
+<!-- /////////////////////////////*************2eme barre***************************/////////////////////// -->
+
+
+<nav class="navbar navbar-expand-sm  ">
+  <section class="container justify-content-center menu2">
+  <!-- Links -->
+
+  <ul class="navbar-nav">
+
+    <li class="nav-item ">
+      <a class="nav-link" routerLink='' >VISITEURS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">ADHERENTS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">PROFESSIONNELS</a>
+    </li>
+  </ul>
+
+</section>
+</nav>
+
+
+
+</router-outlet>
