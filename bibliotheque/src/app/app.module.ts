@@ -14,6 +14,7 @@ import { UtilisateurComponent } from './components/utilisateur/utilisateur.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
+import { ConnexionComponent } from './components/connexion/connexion.component';
 
 
 
@@ -26,6 +27,7 @@ import {MatSelectModule} from '@angular/material/select';
     HomeComponent,
     TestComponent,
     UtilisateurComponent,
+    ConnexionComponent,
     
     
   ],
