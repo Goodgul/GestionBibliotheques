@@ -39,12 +39,12 @@
 
                 <div class="row justify-content-end justify-content-center">
                   <div class="col-md-4 supprimer">
-                    <a type="button" class=" supprimer btn btn-success " type="submit"
+                    <a  *ngIf="authoservice.siAdmin()" type="button" class=" supprimer btn btn-success " type="submit"
                       (click)="suprimer(t)">Supprimer</a>
                   </div>
 
                   <div class="col-md-4">
-                    <a type="button" class=" modifier btn mt-auto btn-dark " type="submit"
+                    <a *ngIf="authoservice.siAdmin()" type="button" class=" modifier btn mt-auto btn-dark " type="submit"
                       (click)="redireger(t)">Modifier</a>
                   </div>
                   <div class="col-md-4">
@@ -124,7 +124,7 @@
 
   <!-- *****************ajouter un produit **************************-->
 
-  <div  class="container mt-4 " *ngIf="listedEtablissement" >
+  <div  class="container mt-4 " *ngIf="listedEtablissement && authoservice.siAdmin() " >
 
     <form ngSubmit="saveEtablissement(bibliotheque)) ;bibliotheque.resetForm()" #bibliotheque="ngForm">
 

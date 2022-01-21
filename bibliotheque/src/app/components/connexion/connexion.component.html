@@ -1,1 +1,56 @@
 <p>connexion works!</p>
+
+<div class="container mt-3">
+    <div calss="col-md-4"> 
+      <div class="alert alert-danger"  *ngIf="authoservice.erreur==1">  
+    
+    <strong> login ou mot de passe  erronnés</strong></div>
+    </div>
+      
+    <form  class="was-validated"  (ngSubmit)="connexion(identifiant.value)" #identifiant="ngForm">
+      <div class="mb-3 mt-3">
+        <label for="uname" class="form-label">Username:</label>
+        <input type="text"  class="form-control" id="uname" placeholder="Enter username" name="nom" [(ngModel)]="identifiantHtlm.nom" required>{{identifiantHtlm.nom}}
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="motdepasse" [(ngModel)]="identifiantHtlm.motdepasse" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      
+    <button type="submit" class="btn btn-primary" (click)=" connexion(identifiant.value)">Submit</button>
+    </form>
+  
+<!-- 
+  <section *ngIf="showme">
+
+  <div  *ngFor="let t of authoservice.adherents">
+    <div *ngIf= "t.nom==identifiantHtlm.nom && t.motdepasse==identifiantHtlm.motdepasse;then contenu_bon  else contenu_pas_bon">
+
+     </div>
+     <ng-template #contenu_bon> <p>  bravo vous estes bien connecter idenfiant est correcte</p></ng-template>
+
+      <ng-template #contenu_pas_bon>
+      {{identifiantHtlm.nom}} vos identifiant sont incorrect</ng-template>
+  
+  </div>
+   
+
+ 
+</section> -->
+  </div>  
+  
+
+
+
+
+
+
+
+
+
+
+  

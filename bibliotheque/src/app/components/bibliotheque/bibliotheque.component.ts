@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from 'src/app/services.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { AuthentificationserviceService } from 'src/app/authentificationservice.service';
 
 @Component({
   selector: 'app-bibliotheque',
@@ -26,7 +27,7 @@ listedEtablissement:any;
 
 
 
-  constructor( private ServicesService:ServicesService) { }
+  constructor( private ServicesService:ServicesService,public authoservice: AuthentificationserviceService) { }
   ngOnInit(): void {
     this.getEtablissement();
     this.isDisabled1=true;

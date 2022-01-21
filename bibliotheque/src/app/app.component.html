@@ -24,16 +24,30 @@
     <li class="nav-item ">
       <a class="nav-link" routerLink='biblio' >Les Bibliothèques</a>
     </li>
+   
     <li class="nav-item">
-      <a class="nav-link" href="#">Agenda</a>
+      <a class="nav-link" routerLink= 'utilisateur'>les livres</a>
     </li>
+    <li>
+      <a   *ngIf="!authoservice.utilisateurconnecter"  class="nav-link"  routerLink='connexion'  >Connexion</a>
+    </li>
+   
+    <li class="nav-item"  *ngIf="authoservice.utilisateurconnecter">
+      <a class="nav-link"  routerLink='Bienvenu' >Bienvenu</a>
+    </li>
+    
     <li class="nav-item">
-      <a class="nav-link" routerLink='utilisateur'>les livres</a>
+      <a class="nav-link"  routerLink='' >{{  authoservice.utilisateurconnecter }}</a>
     </li>
+ 
   </ul>
 
-    <div><i class="fab fa-facebook-square "></i><i class="fab fa-twitter"></i><i class="fab fa-instagram"></i></div>
+    <div><i class="fab fa-facebook-square "></i><i class="fab fa-twitter"></i><i class="fab fa-instagram"></i>
+    <div>    
+      <a   *ngIf="authoservice.utilisateurconnecter"  class="nav-link"  (click)="deconnexion()" >Déconnexion</a>
+    </div>
 
+</div>
 </div>
 </nav>
 
