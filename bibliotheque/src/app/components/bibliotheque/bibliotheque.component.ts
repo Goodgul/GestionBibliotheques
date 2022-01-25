@@ -9,6 +9,7 @@ import { AuthentificationserviceService } from 'src/app/authentificationservice.
   styleUrls: ['./bibliotheque.component.css']
 })
 export class BibliothequeComponent implements OnInit {
+  public listebibliotheque:any;
 
 
 listedEtablissement:any;
@@ -27,7 +28,7 @@ listedEtablissement:any;
 
 
 
-  constructor( private ServicesService:ServicesService,public authoservice: AuthentificationserviceService) { }
+  constructor( public ServicesService:ServicesService,public authoservice: AuthentificationserviceService) { }
   ngOnInit(): void {
     this.getEtablissement();
     this.isDisabled1=true;
@@ -86,9 +87,9 @@ getEtablissement(){
     }
 
     suprimer(bibliotheque:any){
+    console.log(bibliotheque.idbib)
     
-    
-      this.ServicesService.supprimerBibliotheque(bibliotheque.id).subscribe(data=> {
+      this.ServicesService.supprimerBibliotheque(bibliotheque.idbib).subscribe(data=> {
         console.log("Etablissement est supprimer")
         this.getEtablissement();
       })
@@ -114,6 +115,16 @@ this.ServicesService.modifierBibliotheque(this.Bibliothequehtml).subscribe(data=
 })
 
 }
+//////////////////***********************methode qui fait appel au service de la programation reactive ************* */
+private getBibliothequeWithImage(){
 
+
+
+  this.ServicesService.getRessource('/photoBibliothque').subscribe(elements=>{
+
+this.listebibliotheque=elements 
+
+ })
+}
 
 }

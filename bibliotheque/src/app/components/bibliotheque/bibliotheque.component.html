@@ -17,11 +17,14 @@
           <!-- card -->
           <div class="col-md-4" *ngFor="let t of listedEtablissement._embedded.bibliotheques">
             <div class="card  mt-3">
-              <div class="bibliotheque align-items-center p-2 text-center  h-25 min-vh-100">
+              <div class="bibliotheque align-items-center p-2 text-center  ">
 
 
-                <img src="{{t.image}}" class="rounded " height="390" width="390">
+                <!-- <img src="{{t.image}}" class="rounded " height="390" width="390"> -->
+                <img src="{{this.ServicesService.host+'/photoBibliothque/'+t.idbib}}" class="rounded " height="300" width="340">
 
+                <!-- <div class=" idbib">
+                  <h5>{{t.idbib}}</h5></div> -->
                 <div class=" titre">
                   <h5>{{t.titre}}</h5>
 
@@ -144,11 +147,11 @@
       <!-- /*****************adresse************/ -->
 
 
-      <div class="form-group mt-4">
+      <!-- <div class="form-group mt-4">
         <label for="nom">Adresse</label>
         <input type="text" name="adresse" class="form-control" id="adresse" ngModel required minlength="1"
           maxlength="30" [(ngModel)]="Bibliothequehtml.adresse">
-      </div>
+      </div> -->
 
 
       <button type="button" class="btn btn-success mt-4 ml-5" type="submit" (click)="saveEtablissement(bibliotheque)"
@@ -162,18 +165,5 @@
 
 
   <!---------------------------------------------------------- modifier un produit -->
-<section class="container">
-  <h1>Nos bibliothèques</h1>
-
-  <owl-carousel-o [options]="customOptions">
-
-    <ng-container *ngFor="let t of listedEtablissement._embedded.bibliotheques">
-      <ng-template carouselSlide>   <img [src]="(t.image)" class="rounded " height="390" width="390"></ng-template>
-    </ng-container>
-
-  </owl-carousel-o>
-<!-- 
-  <div>some tags after</div> -->
-</section>
 
 </main>

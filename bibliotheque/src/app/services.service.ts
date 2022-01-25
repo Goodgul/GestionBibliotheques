@@ -44,6 +44,9 @@ getquantiteBetwen(valeur1:any, valeur2:any){
     return this.http.get(this.url); 
 
   }
+
+
+
   saveBibliotheque(bibliotheque:any){
 
     return this.http.post("http://localhost:8099/bibliotheques",bibliotheque);
@@ -54,8 +57,16 @@ getquantiteBetwen(valeur1:any, valeur2:any){
   }
   modifierBibliotheque(Bibliothequehtml :any){
 
-    return this.http.patch("http://localhost:8099/bibliotheques/"+Bibliothequehtml.id,Bibliothequehtml)
+    return this.http.patch("http://localhost:8099/bibliotheques/"+Bibliothequehtml.idbib,Bibliothequehtml)
   }
+
+/////////////////////////////////////**********************************creer un service methode a utiliser pour tous les composant(2eme methode) */
+public host:string="http://localhost:8099"
+public getRessource(url:any){
+
+
+  return this.http.get(this.host+url);
+}
 
 
 

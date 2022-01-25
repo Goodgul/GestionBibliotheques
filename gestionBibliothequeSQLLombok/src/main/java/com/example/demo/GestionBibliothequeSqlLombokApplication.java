@@ -8,6 +8,7 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
 import com.example.demo.Dao.BibliothequeRepository;
 import com.example.demo.entities.Bibliotheque;
+import com.example.demo.entities.Livre;
 
 
 
@@ -15,11 +16,10 @@ import com.example.demo.entities.Bibliotheque;
 
 
 @SpringBootApplication
-public class GestionBibliothequeSqlLombokApplication {
-@Autowired
-private BibliothequeRepository lr;
-private RepositoryRestConfiguration rrc;
+public class GestionBibliothequeSqlLombokApplication implements CommandLineRunner {
 
+@Autowired
+private RepositoryRestConfiguration rrc;
 	
 
 	public static void main(String[] args) {
@@ -28,6 +28,15 @@ private RepositoryRestConfiguration rrc;
 				
 			
 		}
+
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		
+		rrc.exposeIdsFor(Bibliotheque.class,Livre.class);
+		
+	}
 
 
 

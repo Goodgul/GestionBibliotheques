@@ -34,8 +34,7 @@ public class Bibliotheque {
  	@Column(length=1000)
 	private String description;
 	private String titre;
-	private byte[] image;
-	
+	private String photo;
 
 	
 	@OneToMany(mappedBy="bibliotheque")

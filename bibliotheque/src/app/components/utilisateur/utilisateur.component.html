@@ -7,8 +7,8 @@
 <div class="col-md-4">
   <mat-form-field>Quantité de livre
     <mat-label></mat-label>
-    <mat-select [formControl]="toppings"  multiple  (change)="changer(selectedvalue)"  [(value)]=selectedvalue  >{{selectedvalue}}
-      <mat-option *ngFor="let topping of toppingList" [value]="topping"  color="accent" [disabled]="status" >{{topping}}</mat-option>
+    <mat-select   [formControl]="toppings"  multiple  [(value)]=selectedvalue  ><div  *ngIf="nombreatteint(selectedvalue) " ></div>{{selectedvalue}}
+      <mat-option *ngFor="let topping of toppingList" [value]="topping"  color="accent" [disabled]="status"    > {{topping}}</mat-option>
     </mat-select>
   </mat-form-field>
 

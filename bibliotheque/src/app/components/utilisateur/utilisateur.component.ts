@@ -33,17 +33,10 @@ selectedvalue:Number[]=[];
     
   }
 
-  changer(e:any){
-    
-if(e.length==2){
-  this.status=true;
 
+  
 
-}
-
-  }
-
-
+////////////////////////////////affiche les bibliotheque
   getEtablissement(){
 
     this.ServicesService.getBibliotheque().subscribe(data=> {
@@ -56,6 +49,7 @@ if(e.length==2){
   listeLivre:any;
 quantitlivre:any;
 
+////////////////////////////////////////////////// recherche les livres d une bibliotheque données
   recherchelivreparBibliotheque(motcle:any){
  
     this.mavariable=motcle
@@ -74,18 +68,30 @@ quantitlivre:any;
       
   })}
 
-  //////////////////////////**************avoir une qantit entre deux valeur donnée************************* */
+  //////////////////////////**************avoir une qantite de livre entre deux valeur donnée************************* */
 quantitBetwen(valeurs:any){
 
   console.log(this.selectedvalue.length)
   valeurs=this.selectedvalue;
   this.ServicesService.getquantiteBetwen(valeurs[0],valeurs[1]).subscribe(data=> {
 
+    this.status=false;
 
     this.quantitlivre=data;
     console.log(this.quantitlivre);
 
 })
+}
+
+////////////////////////////////
+
+nombreatteint(nombre:any){
+if(nombre.length>=2){
+
+  this.status=true
+}
+
+
 }
 }
 

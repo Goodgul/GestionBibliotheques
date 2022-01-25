@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BibliothequeComponent } from './components/bibliotheque/bibliotheque.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: '', component:HomeComponent },
   { path: 'test', component:TestComponent },
   { path: 'utilisateur', component:UtilisateurComponent },
-  { path: 'connexion', component:ConnexionComponent }
+  { path: 'connexion', component:ConnexionComponent },
+  {path:'home' , component:HomeComponent}
 
 
 
